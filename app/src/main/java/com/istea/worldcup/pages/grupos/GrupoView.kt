@@ -52,9 +52,9 @@ fun GruposView(
                         contentAlignment = Alignment.Center
                     ) {
                         CircularProgressIndicator(
-                            modifier = Modifier.size(100.dp),
-                            strokeWidth = 8.dp,
-                            color = Color.Gray
+                            modifier = Modifier.size(160.dp),
+                            strokeWidth = 20.dp,
+                            color = MaterialTheme.colorScheme.primaryContainer
                         )
                     }
                 }
