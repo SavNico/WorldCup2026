@@ -11,6 +11,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -45,7 +46,18 @@ fun GruposView(
         ) {
             BackgroundImage()
             when (state) {
-                GruposState.Cargando -> Text("Cargando...")
+                GruposState.Cargando -> {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(100.dp),
+                            strokeWidth = 8.dp,
+                            color = Color.Gray
+                        )
+                    }
+                }
                 is GruposState.Resultado -> GroupsList(grupos = state.grupos){
                     onAction(OnGrupoClick(it))
                 }
